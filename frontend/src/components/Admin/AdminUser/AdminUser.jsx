@@ -2,7 +2,7 @@ import React from "react";
 import { WrapperHeader } from "./style";
 import { Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
-import TableComponent from "../TableComponent/TableComponent";
+import TableComponent from "../TableComponent/UserTableComponent";
 const AdminUser = () => {
   return (
     <div style={{ marginLeft: "40px" }}>

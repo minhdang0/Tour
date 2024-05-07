@@ -1,6 +1,6 @@
-import React,{useContext} from "react";
-import { Container, Row, Button,Dropdown } from "reactstrap";
-import { NavLink, Link,useNavigate} from "react-router-dom";
+import React, { useContext } from "react";
+import { Container, Row, Button, Dropdown } from "reactstrap";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 
 import logo from "../../assets/images/logo1.png";
 
@@ -20,12 +20,11 @@ const nav__links = [
 ];
 const Header = () => {
   const navigate = useNavigate();
-  const {user,dispatch} = useContext(AuthContext)
-  const logout =() =>{
-    dispatch({type:'LOGOUT'})
-    navigate('/')
-  
-  }
+  const { user, dispatch } = useContext(AuthContext);
+  const logout = () => {
+    dispatch({ type: "LOGOUT" });
+    navigate("/");
+  };
   const toggleUserMenu = () => {
     const userMenu = document.getElementById("user-menu");
     userMenu.classList.toggle("show");
@@ -40,7 +39,9 @@ const Header = () => {
           >
             {/* ============ logo =============  */}
             <div className="logo">
-              <Link to="/home"><img src={logo} alt="" /></Link>
+              <Link to="/home">
+                <img src={logo} alt="" />
+              </Link>
             </div>
             {/* ============ logo end =============  */}
             {/* ============ menu start=============  */}
@@ -64,41 +65,54 @@ const Header = () => {
 
             <div className="nav_rigth d-flex align-items-center gap-4">
               <div className="nav_btns d-flex align-items-center gap-4">
-                   {user?(
-                   <>
-                   <div className="menu-container">
-                   <div className="mb-0"   id="user-menu-trigger"
-                      onClick={toggleUserMenu}>< i class="ri-user-3-fill" id="user" ><span><span></span></span> </i>{user.username}</div>
-                    <div>
-                    <ul className="dropdown-menu menu-size " id="user-menu">
-                      <li style={{}}>
-                         <Link to="/profile">Hồ sơ</Link>
-                      </li>
-                      <li>
-                        <Link to="/tour-history">Lịch sử tour</Link>
-                      </li>
-                      <li>
-                        <Link to="/admin">Quản trị hệ thống</Link>
-                      </li>
-                     
-                    </ul>
+                {user ? (
+                  <>
+                    <div className="menu-container">
+                      <div
+                        className="mb-0"
+                        id="user-menu-trigger"
+                        onClick={toggleUserMenu}
+                      >
+                        <i class="ri-user-3-fill" id="user">
+                          <span>
+                            <span></span>
+                          </span>{" "}
+                        </i>
+                        {user.username}
+                      </div>
+                      <div>
+                        <ul className="dropdown-menu menu-size " id="user-menu">
+                          <li style={{}}>
+                            <Link to="/profile">Hồ sơ</Link>
+                          </li>
+                          <li>
+                            <Link to="/tour-history">Lịch sử tour</Link>
+                          </li>
+                          <li>
+                            <Link to="/admin">Quản trị hệ thống</Link>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
-                   </div>       
                     <div className="btn-logout-container">
-                    <Button className="btn btn-dark btn-logout" onClick={()=>logout()}>Đăng xuất</Button>
+                      <Button
+                        className="btn btn-dark btn-logout"
+                        onClick={() => logout()}
+                      >
+                        Đăng xuất
+                      </Button>
                     </div>
-                    
-                   </>
-                   ):(
-                    <>
-                      <Button className="btn secondary__btn">
+                  </>
+                ) : (
+                  <>
+                    <Button className="btn secondary__btn">
                       <Link to="/login">Đăng nhập</Link>
                     </Button>
                     <Button className="btn primary__btn">
                       <Link to="/register">Đăng ký</Link>
                     </Button>
-                    </>
-                   )}
+                  </>
+                )}
                 <div>
                   <span className="mobile_menu">
                     <i className="ri-menu-line"></i>
