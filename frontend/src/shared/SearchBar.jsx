@@ -37,14 +37,14 @@ const searchHandler = () =>
                 <span><i className="ri-map-pin-time-line"></i></span>
                 <div>
                     <h6>Khoảng cách</h6>
-                    <input type="number" placeholder='Tính theo k/m' ref={distanceRef} />
+                    <input type="number" placeholder='Tính theo k/m' min='0' ref={distanceRef} />
                 </div>
             </FormGroup>
             <FormGroup className='d-flex gap-3 form_group form_group-fast'>
                 <span><i className="ri-group-line"></i></span>
                 <div>
                     <h6>Số người</h6>
-                    <input type="number" placeholder='0' ref={maxGroupSizeRef} />
+                    <input type="number" placeholder='0' min='0' ref={maxGroupSizeRef} />
                 </div>
             </FormGroup>
 

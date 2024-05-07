@@ -62,25 +62,26 @@ const Header = () => {
             </div>
             {/* ============ menu end =============  */}
 
-            <div className="nav_rigth d-flex align-items-center gap-4">
               <div className="nav_btns d-flex align-items-center gap-4">
                    {user?(
                    <>
                    <div className="menu-container">
                    <div className="mb-0"   id="user-menu-trigger"
                       onClick={toggleUserMenu}>< i class="ri-user-3-fill" id="user" ><span><span></span></span> </i>{user.username}</div>
-                    </div>
-                    <div className="dropdown-menu  " id="user-menu" style={{maxWidth:"50px"}}>
-                      <div className="menu-option">
+                    <div>
+                    <ul className="dropdown-menu menu-size " id="user-menu">
+                      <li >
                          <Link to="/profile">Hồ sơ</Link>
-                      </div >
-                      <div className="menu-option">
+                      </li>
+                      <li>
                         <Link to="/tour-history">Lịch sử tour</Link>
-                      </div>
-                      <div className="menu-option">
+                      </li>
+                      <li>
                         <Link to="/admin">Quản trị hệ thống</Link>
-                      </div>
+                      </li>
                      
+                    </ul>
+                    </div>
                    </div>       
                     <div className="btn-logout-container">
                     <Button className="btn btn-dark btn-logout" onClick={()=>logout()}>Đăng xuất</Button>
@@ -103,7 +104,6 @@ const Header = () => {
                   </span>
                 </div>
               </div>
-            </div>
           </div>
         </Row>
       </Container>
