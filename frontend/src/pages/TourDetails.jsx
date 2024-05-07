@@ -53,7 +53,7 @@ const TourDetails = () => {
                       )}
                   </span>
                       <span>
-                          <i className="ri-map-pin-fill"></i> {address} 
+                        <i class="ri-time-line"></i> {address} 
                       </span>
                 </div>
                 <div className="tour_extra-detail">
@@ -67,11 +67,18 @@ const TourDetails = () => {
                   <i class="ri-hotel-line"></i> {hotel} 
                   </span>
                   <span>
-                  <i class="ri-group-line"></i> {maxGroupSize} nguười
+                  <i class="ri-group-line"></i> {maxGroupSize} người
                   </span>
                 </div>
                 <h5>Mô tả</h5>
-                <p>{desc}</p>
+                {desc.map((value,index) => {
+                    //  <p key={index}><b>{`Ngày ${index + 1}: `}</b>{value}</p>
+                    return (
+                     <p key={index}><b>{`Ngày ${index + 1}: `}</b>{value}</p>
+
+                    )
+                })}
+                
               </div>
               {/* tour reivews section */}
               <div className="tour_reviews mt-4">

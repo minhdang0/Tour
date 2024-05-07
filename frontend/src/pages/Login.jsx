@@ -7,8 +7,6 @@ import "../styles/login.css";
 
 import LoginImg from "../assets/images/dulichviet.jpeg";
 import usericon from "../assets/images/user.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
 
 import { AuthContext } from "../context/AuthContext.js";
