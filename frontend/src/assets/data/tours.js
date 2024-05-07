@@ -1,21 +1,22 @@
 import tourImg01 from "../images/tour-img01.jpg";
 import tourImg02 from "../images/tour-img02.jpg";
-import tourImg03 from "../images/tour-img03.jpg";
+import tourImg03 from "../images/tour-img03.webp";
 import tourImg04 from "../images/tour-img04.jpg";
-import tourImg05 from "../images/tour-img05.jpg";
+import tourImg05 from "../images/tour-img05.webp";
 import tourImg06 from "../images/tour-img06.jpg";
 import tourImg07 from "../images/tour-img07.jpg";
+import tourImg08 from "../images/tour-img08.jpg";
 
 const tours = [
   {
     id: "01",
-    title: "Tháp Đồng Hồ",
-    city: "London",
+    title: "Du lịch Hè - Tour Đà Nẵng - Bà Nà - Hội An 2024",
+    city: " Đà Nẵng",
     hotel: 'Mường Thanh',
-    price: '1.000.000',
+    price: '5.590.000',
     maxGroupSize: 10,
-    "address": "Anh",
-    desc: "this is the description",
+    "address": "3 ngày 2 đêm",
+    desc: "description",
     reviews: [
       {
         name: "jhon doe",
@@ -33,13 +34,13 @@ const tours = [
   },
   {
     id: "02",
-    title: "Bali, Indonesia",
-    city: "Indonesia",
-    "address": "Indonesia",
+    title: "Du lịch Huế Hè 3 ngày bay Vietnam Airlines 2024",
+    city: "Huế",
+    "address": "3 ngày 2 đêm",
     hotel: 'Mường Thanh',
-    price: "1.500.000",
+    price: "5.990.000",
     maxGroupSize: 8,
-    desc: "this is the description",
+    desc: "description",
     reviews: [
       {
         name: "jhon doe",
@@ -52,13 +53,13 @@ const tours = [
   },
   {
     id: "03",
-    title: "Snowy Mountains, Thailand",
-    city: "Bangkok",
-    address: "Thái Lan",
+    title: "Tour Du lịch Nha Trang",
+    city: "Nha Trang",
+    address: "3 ngày 2 đêm",
     hotel: 'Mường Thanh',
-    price: '5.600.000',
+    price: '6.690.000',
     maxGroupSize: 8,
-    desc: "this is the description",
+    desc: "description",
     reviews: [
       {
         name: "jhon doe",
@@ -75,13 +76,13 @@ const tours = [
   },
   {
     id: "04",
-    title: "Beautiful Sunrise, Thailand",
-    city: "Bangkok",
-    "address": "Thái Lan",
-    hotel: 'Mường Thanh',
-    price: '3.500.000',
+    title: "Du lịch Phú Quốc Hè - Vinpearland - Đảo Ngọc",
+    city: "Phú Quốc",
+    "address": "3 ngày 2 đêm",
+    hotel: 'Vinpearl',
+    price: '6.290.000',
     maxGroupSize: 8,
-    desc: "this is the description",
+    desc: "description",
     reviews: [
       {
         name: "jhon doe",
@@ -94,13 +95,13 @@ const tours = [
   },
   {
     id: "05",
-    title: "Nusa Pendia Bali, Indonesia",
-    city: "Indonesia",
-    "address": "Indonesia",
-    hotel: 'Mường Thanh',
-    price: '4.990.000',
+    title: "Tour Du lịch Quy Nhơn - Đảo Điệp Sơn - Phú Yên",
+    city: "Quy Nhơn",
+    "address": "3 ngày 2 đêm",
+    hotel: 'RAON',
+    price: '5.890.000',
     maxGroupSize: 8,
-    desc: "this is the description",
+    desc: "description",
     reviews: [
       {
         name: "jhon doe",
@@ -113,13 +114,13 @@ const tours = [
   },
   {
     id: "06",
-    title: "Hoa Anh Đào Xuân",
-    city: "Japan",
-    address: "Nhật Bản",
+    title: "Tour Du lịch Sài Gòn - Vũng Tàu",
+    city: "Vũng Tàu",
+    address: "4 ngày 3 đêm",
     hotel: 'Mường Thanh',
-    price: '5.000.000',
+    price: '8.790.000đ',
     maxGroupSize: 8,
-    desc: "this is the description",
+    desc: "description",
     reviews: [
       {
         name: "jhon doe",
@@ -132,13 +133,13 @@ const tours = [
   },
   {
     id: "07",
-    title: "Holmen Lofoten",
+    title: "Du lịch Hà Nôi - Sapa - Bản Cát Cát - Check in Moana từ Hà Nội",
     city: "Paris",
-    address: "Pháp",
-    hotel: 'Mường Thanh',
-    price: '3.990.000',
+    address: "2 ngày 1 đêm",
+    hotel: 'Homestay',
+    price: '4.890.000',
     maxGroupSize: 8,
-    desc: "this is the description",
+    desc: "description",
     reviews: [
       {
         name: "jhon doe",
@@ -155,16 +156,16 @@ const tours = [
   },
   {
     id: "08",
-    title: "Núi Tuyết, Thailand",
-    city: "BangKok",
-    address: "Thái Lan",
+    title: "Tour Du lịch Tây Nguyên mùa hoa Cafe - Buôn Mê Thuột - Kontum - Pleiku",
+    city: "Pleiku",
+    address: "5 ngày 4 đêm",
     hotel: 'Mường Thanh',
-    price: '3.990.000',
+    price: '7.990.000',
     maxGroupSize: 8,
-    desc: "this is the description",
+    desc: "description",
     reviews: [],
     avgRating: 4.5,
-    photo: tourImg03,
+    photo: tourImg08,
     featured: false,
   },
 ];

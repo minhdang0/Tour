@@ -16,7 +16,7 @@ const TourCard = ({tour}) => {
             { featured && <span>Nổi bật</span>}
         </div>
     
-        <CardBody>
+        <CardBody className='custom-card-body'>
         <div className="card_top d-lex align-items-center justify-content-between">
             <span className='tour_location d-flex align-items-center gap-1'>
                 <i className="ri-map-pin-line"></i> {city}
@@ -36,7 +36,7 @@ const TourCard = ({tour}) => {
         </h5>
 
         <div className="card_bottom d-flex align-items-center-between justify-content mt-3">
-            <h5>{price}đ <span> /người</span></h5>
+            <h5 className='price'>{price}đ <span> /người</span></h5>
             
             <button className="btn booking_btn">
                 <Link to={`/tours/${id}`}>Đặt ngay</Link>

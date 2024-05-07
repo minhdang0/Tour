@@ -62,7 +62,6 @@ const Header = () => {
             </div>
             {/* ============ menu end =============  */}
 
-            <div className="nav_rigth d-flex align-items-center gap-4">
               <div className="nav_btns d-flex align-items-center gap-4">
                    {user?(
                    <>
@@ -71,7 +70,7 @@ const Header = () => {
                       onClick={toggleUserMenu}>< i class="ri-user-3-fill" id="user" ><span><span></span></span> </i>{user.username}</div>
                     <div>
                     <ul className="dropdown-menu menu-size " id="user-menu">
-                      <li style={{}}>
+                      <li >
                          <Link to="/profile">Hồ sơ</Link>
                       </li>
                       <li>
@@ -105,7 +104,6 @@ const Header = () => {
                   </span>
                 </div>
               </div>
-            </div>
           </div>
         </Row>
       </Container>

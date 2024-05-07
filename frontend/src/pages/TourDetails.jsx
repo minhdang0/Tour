@@ -53,7 +53,7 @@ const TourDetails = () => {
                       )}
                   </span>
                       <span>
-                          <i className="ri-map-pin-fill"></i> {address} 
+                        <i class="ri-time-line"></i> {address} 
                       </span>
                 </div>
                 <div className="tour_extra-detail">
