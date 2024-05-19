@@ -1,6 +1,7 @@
 import React from "react";
 import "./HotelModal.css"
-import { Modal, ModalHeader, ModalBody ,ModalFooter} from "reactstrap";
+import { Modal, ModalHeader, ModalBody,ModalFooter } from "reactstrap";
+
 
 const HotelModal = ({ isOpen, toggle, hotelInfo }) => {
 
@@ -48,24 +49,23 @@ const HotelModal = ({ isOpen, toggle, hotelInfo }) => {
      
       <ModalBody>
         <div>
-          <img  className="img-hotel  max-w-lg rounded-lg" src={`${hotelInfo?.image}`} alt={hotelInfo?.name} />      
-        </div>
-       
+          <img  className="img-hotel  max-w-lg rounded-lg" src={`${hotelInfo?.image}`} alt={hotelInfo?.name} />
+          <div className="star-rating">
+            <h3>Thông tin khách sạn</h3>
+          </div>
+          </div>
       </ModalBody>
-      <ModalFooter  >
-      <div className="modal-footer-custom">
-          <h3>Thông tin khách sạn</h3>
+        <ModalFooter>
+          <div className="body-info bg-light">
             <div>
-              {hotelInfo.rating} {renderStars(hotelInfo?.rating)}
+            <strong>Đánh giá: </strong>{renderStars(hotelInfo?.rating)}
             </div>
+            <p><strong>Địa chỉ:</strong> {hotelInfo?.address}</p>
+          </div>
+        </ModalFooter>
+        </Modal>
           
-          <div className="amenities">
-              <p><i class="ri-map-pin-fill "></i> {hotelInfo?.address}</p>
-              {hotelInfo?.amenities && renderAmenities(hotelInfo.amenities)}
-            </div>
-            </div>
-      </ModalFooter>
-    </Modal>
+   
   );
 };
 
