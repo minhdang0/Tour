@@ -3,9 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Modal, Form, Input, Button, InputNumber, Select } from "antd";
 import { BASE_URL } from "../../../utils/config";
 import { message } from "antd";
+import ImageUpload from './ImageUpload';
 const { Option } = Select;
-
-
 
 const availableAmenities = [
   { name: "Ăn sáng miễn phí", icon: "/icon/breakfast.png" },
@@ -21,14 +20,16 @@ const availableAmenities = [
 const HotelModal = ({ title, visible, onOk, onCancel, hotel, hotelAmenities }) => {
   const [form] = Form.useForm();
   const [selectedAmenities, setSelectedAmenities] = useState([]);
-
+  const [imagePath, setImagePath] = useState("");
   useEffect(() => {
     if (hotel) {
       form.setFieldsValue(hotel);
       setSelectedAmenities(hotel.amenities.map(a => a.name)); 
+      setImagePath(hotel.image); 
     } else {
       form.resetFields();
       setSelectedAmenities([]); 
+      setImagePath('');
     }
   }, [hotel, form]);
 
@@ -42,7 +43,7 @@ const HotelModal = ({ title, visible, onOk, onCancel, hotel, hotelAmenities }) =
       values.amenities = selectedAmenities; 
     
       const method = hotel ? "PUT" : "POST";
-      const url = hotel ? `${BASE_URL}/hotel/${hotel._id}` : `${BASE_URL}/hotels`;
+      const url = hotel ? `${BASE_URL}/hotel/${hotel._id}` : `${BASE_URL}/hotel/`;
 
       fetch(url, {
         method,
@@ -60,8 +61,8 @@ const HotelModal = ({ title, visible, onOk, onCancel, hotel, hotelAmenities }) =
           message.error(`Failed to ${hotel ? "update" : "create"} hotel`);
         }
       })
-      .catch((error) => {
-        console.error("Failed to save hotel:", error);
+      .catch((err) => {
+        console.error("Failed to save hotel:", err.message);
         message.error(`An error occurred while ${hotel ? "updating" : "creating"} the hotel`);
       });
     });
@@ -105,6 +106,9 @@ const HotelModal = ({ title, visible, onOk, onCancel, hotel, hotelAmenities }) =
         </Form.Item>
         <Form.Item name="titlehotel" label="Title hotel" rules={[{ required: true, message: "Nhập tiêu đề của hotel!" }]}>
           <Input />
+        </Form.Item>
+        <Form.Item label="Upload Image">
+          <ImageUpload onUpload={(filePath) => setImagePath(filePath)} />
         </Form.Item>
         <Form.Item name="amenities" label="Amenities">
           <Select

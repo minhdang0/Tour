@@ -4,6 +4,7 @@ import {
   UserOutlined,
   ShoppingOutlined,
   FundOutlined,
+  MoonOutlined
   
 } from "@ant-design/icons";
 
@@ -41,6 +42,7 @@ const items = [
   },
   {
     key:"5",
+    icon:<MoonOutlined />,
     label:"Hotel"
   },
 ];

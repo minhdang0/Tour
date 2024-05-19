@@ -4,9 +4,9 @@ import { verifyUser , verifyAdmin} from "../utils/verifyToken.js";
 
 const router  = express.Router();
 //create hotel
-router.post('/', createHotel);
+router.post('/',verifyAdmin, createHotel);
 //update hotel
-router.put('/:id', updateHotel);
+router.put('/:id',verifyAdmin, updateHotel);
 // delete hotel
 router.delete('/:id', verifyAdmin, deleteHotel);
 //get singlehotel
@@ -14,6 +14,6 @@ router.get('/:id', getSingleHotel);
 //get Hotels by tour id
 router.get('/tour/:title', getHotelsByTourTitle);
 //get all hotel
- router.get('/', getAllHotel);
+ router.get('/',verifyAdmin, getAllHotel);
 
 export default router;
