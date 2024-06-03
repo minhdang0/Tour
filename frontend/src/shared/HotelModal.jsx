@@ -60,12 +60,16 @@ const HotelModal = ({ isOpen, toggle, hotelInfo }) => {
             <div>
             <strong>Đánh giá: </strong>{renderStars(hotelInfo?.rating)}
             </div>
+            <div>
             <p><strong>Địa chỉ:</strong> {hotelInfo?.address}</p>
+            </div>
+            <div> 
+            {hotelInfo?.amenities ? renderAmenities(hotelInfo.amenities) : <p>Không có tiện ích nào</p>}
+            </div>
+            
           </div>
         </ModalFooter>
         </Modal>
-          
-   
   );
 };
 

@@ -6,11 +6,9 @@ import { Button, message } from "antd";
 import HotelTableComponent from "../TableComponent/HotelTableComponent";
 import HotelModal from "./HotelModal";
 import { BASE_URL } from "../../../utils/config";
-import useFetch from "../../../hooks/useFetch";
 const AdminHotel = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentHotel, setCurrentHotel] = useState(null);
-  const { refetch } = useFetch(`${BASE_URL}/hotel`);
 
   const showModal = (hotel) => {
     setCurrentHotel(hotel);
@@ -20,7 +18,6 @@ const AdminHotel = () => {
   const handleOk = () => {
     setIsModalOpen(false);
     setCurrentHotel(null);
-    refetch();
   };
 
   const handleCancel = () => {
@@ -29,7 +26,7 @@ const AdminHotel = () => {
   };
 
   const handleDelete = async (hotel) => {
-    try {
+    try { 
       const response = await fetch(`${BASE_URL}/hotel/${hotel._id}`, {
         method: "DELETE",
         headers: {
@@ -38,7 +35,9 @@ const AdminHotel = () => {
       });
       if (response.ok) {
         message.success("Hotel deleted successfully");
-        refetch();
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
       }
     } catch (error) {
       console.error("Failed to delete hotel:", error);
